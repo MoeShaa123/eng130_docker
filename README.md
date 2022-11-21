@@ -20,3 +20,10 @@
 
 ![image](https://user-images.githubusercontent.com/106158041/203054387-c2c175a5-589b-490a-bef1-6e31d7b8d25f.png)
 
+## Benefits of using Microservices
+
+- Code can be updated more easily - new features or functionality can be added without touching the entire application
+
+- Teams can use different stacks and different programming languages for different components.
+
+- Components can be scaled independently of one another, reducing the waste and cost associated with having to scale entire applications because a single feature might be facing too much load.
