@@ -49,6 +49,53 @@
 - `docker pull [username:repo]`
 
 ### Docker Automation
-
+#### HTML task
 - inside the same folder as index.html, create a Dockerfile
+- `nano Dockerfile`
+- Inside the Dockerfile write this
+```
+FROM nginx
 
+# who is creating this
+LABEL MAINTANER=mohamedyusuf
+
+# created index.html progile - copy to container
+# default location /usr/share/nginx/html/
+COPY index.html /usr/share/nginx/html/
+
+# docker run -d -p 80:80 name
+
+
+# port number
+EXPOSE 80
+
+# launch the server
+CMD ["nginx", "-g", "daemon off;"]
+```
+- This will replace the HTML file inside nginx with your own
+- `docker build -t moeshaa123/130-nginx .` 
+- `docker run -d -p 80:80 moeshaa123/130-nginx`
+
+#### App task
+
+- In the Dockerfile expose Port 3000
+- Install Npm
+- Create a New Dockerfile where your app folder is
+```
+FROM nginx
+
+LABEL MAINTAINER=mohamed
+COPY app /home/
+EXPOSE 80
+EXPOSE 3000
+RUN apt-get update
+RUN apt-get install -y
+RUN apt-get install software-properties-common -y
+RUN apt-get install npm -y
+CMD ["nginx", "-g", "daemon off;"]
+WORKDIR /home/app
+RUN npm install
+CMD ["npm", "start"]
+```
+- `docker build -t moeshaa123/130-node .`
+- `docker run -d -p 3000:3000 moeshaa123/130-node`
