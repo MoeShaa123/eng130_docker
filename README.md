@@ -27,3 +27,20 @@
 - Teams can use different stacks and different programming languages for different components.
 
 - Components can be scaled independently of one another, reducing the waste and cost associated with having to scale entire applications because a single feature might be facing too much load.
+
+### Docker commands
+
+- `docker --version` - should get the version 20.11
+- `docker` - gets the cheat sheet for docker
+- `docker pull hello-world` - downloads the hello-world container
+- `docker images` - displays the images you have
+- `docker run hello-world` - runs the image we downloaded before
+- `docker ps` - draws the processes that are running at the moment
+- `docker run -p 2368:2368 ghost` - will pull and then run it in one go and select the correct port
+- `docker rm [docker id] -f` - to force delete docker that is running
+- `docker run -p 80:80 nginx` - to launch nginx
+- `docker run -d -p 80:80 nginx` - d stands for detatch mode so we will get the terminal back when run
+- `docker stop [process id]` - stops the process running with all the
+- `docker exec` -it [process id] bash - be able to execute shell commands in the process provided
+
+
