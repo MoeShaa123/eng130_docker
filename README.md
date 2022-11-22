@@ -43,7 +43,7 @@
 - `docker stop [process id]` - stops the process running with all the
 - `docker exec` -it [process id] bash - be able to execute shell commands in the process provided
 
-- `docker cp index.htnk [id]:/usr/share/nginx/html/`
+- `docker cp index.html [id]:/usr/share/nginx/html/`
 - `docker commit [id] [username:repo]`
 - `docker push [username:repo]`
 - `docker pull [username:repo]`
