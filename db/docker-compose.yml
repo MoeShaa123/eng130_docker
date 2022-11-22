@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+  mongodb:
+    # Base image being used
+    image: mongo
+    # restart: always
+    # Makes the data from this path persistent
+    volumes:
+      - ~/mongo:/data/db
+    # The port that mongodb will be on
+    ports:
+      - "27017:27017"
+
+  nodeapp:
+    # Restarts the container in the event of failure
+    restart: always
+    # The build that you want to use with this app
+    build: ~/app
+    # Sets the environment that it needs to connect to
+    environment:
+      - DB_HOST=mongodb://mongodb:27017/posts
+    # The port that the app will be on
+    ports:
+      - "3000:3000"
+    # What container app is linking to
+    links:
+      - mongodb
