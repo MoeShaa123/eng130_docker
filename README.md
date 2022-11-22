@@ -44,7 +44,11 @@
 - `docker exec` -it [process id] bash - be able to execute shell commands in the process provided
 
 - `docker cp index.htnk [id]:/usr/share/nginx/html/`
-- `docker commit [username:repo]`
-- `docker pull`
+- `docker commit [id] [username:repo]`
+- `docker push [username:repo]`
+- `docker pull [username:repo]`
 
+### Docker Automation
+
+- inside the same folder as index.html, create a Dockerfile
 
