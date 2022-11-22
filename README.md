@@ -76,6 +76,9 @@ CMD ["nginx", "-g", "daemon off;"]
 - `docker build -t moeshaa123/130-nginx .` 
 - `docker run -d -p 80:80 moeshaa123/130-nginx`
 
+![html](https://user-images.githubusercontent.com/106158041/203329542-23b7c17e-d96e-428a-91c4-874d78b4068c.png)
+
+
 #### App task
 
 - In the Dockerfile expose Port 3000
@@ -99,3 +102,6 @@ CMD ["npm", "start"]
 ```
 - `docker build -t moeshaa123/130-node .`
 - `docker run -d -p 3000:3000 moeshaa123/130-node`
+
+![Screenshot 2022-10-19 143255](https://user-images.githubusercontent.com/106158041/203329630-23c5efe8-8b15-4ff3-839e-efcf978409ac.png)
+
