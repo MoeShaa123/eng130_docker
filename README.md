@@ -109,3 +109,6 @@ CMD ["npm", "start"]
 ![appimg](https://user-images.githubusercontent.com/106158041/203330532-fe5b4d92-a57a-4314-b57c-bc24207c0f0f.PNG)
 
 ## Kubernetes
+
+![kubernetes drawio](https://user-images.githubusercontent.com/106158041/204559561-f15b7853-4eb5-48de-a5f1-4eeb2708be44.png)
+
