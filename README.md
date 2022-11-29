@@ -80,7 +80,7 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ![html](https://user-images.githubusercontent.com/106158041/203329542-23b7c17e-d96e-428a-91c4-874d78b4068c.png)
 
-#### App task
+#### App tasks
 
 - In the Dockerfile expose Port 3000
 - Install Npm
