@@ -1,12 +1,12 @@
-version: "3.8"
+#version: "3.8"
 services:
   mongodb:
     # Base image being used
-    image: mongo
+    image: mongo:4.0.4
     # restart: always
     # Makes the data from this path persistent
     volumes:
-      - ~/mongo:/data/db
+      - ./db/mongod.conf:/etc/mongod.conf
     # The port that mongodb will be on
     ports:
       - "27017:27017"
@@ -15,7 +15,7 @@ services:
     # Restarts the container in the event of failure
     restart: always
     # The build that you want to use with this app
-    build: ~/app
+    build: ./app
     # Sets the environment that it needs to connect to
     environment:
       - DB_HOST=mongodb://mongodb:27017/posts
@@ -23,5 +23,5 @@ services:
     ports:
       - "3000:3000"
     # What container app is linking to
-    links:
+    depends_on:
       - mongodb

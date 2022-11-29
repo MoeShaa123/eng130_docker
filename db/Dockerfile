@@ -1,9 +1,9 @@
 FROM mongo
 
-LABEL MAINTAINER=mohamed
+WORKDIR /usr/src/db/
 
-COPY . .
-
-RUN   sed -i "s|bindIp: 127.0.0.1|bindIp: 0.0.0.0|g" /etc/mongod.conf.orig
+COPY ./mongod.conf /etc/
 
 EXPOSE 27017
+
+CMD ["mongod"]

@@ -1,0 +1,27 @@
+---
+apiVersion: apps/v1 # which api to use for deployment
+kind: Deployment # what kind of service/object you want to create
+
+# what you like to call it - name the service/object
+
+metadata:
+  name: node-deployment # naming the deployment
+
+spec:
+  selector:
+    matchLabels:
+      app: node
+  # create replica set with instances/pods
+  replicas: 3
+  # template to use it's label for K8 service to launch in browser
+  template:
+    metadata:
+      labels:
+        app: node # thish label conncects to the service
+    # define container spec
+    spec:
+      containers:
+        - name: node
+          image: moeshaa123/130-node # use the image you bulit
+          ports:
+            - containerPort: 3000

@@ -8,7 +8,6 @@
 
 ![image](https://user-images.githubusercontent.com/106158041/203054546-0470ce40-0a17-4a30-898d-1e5c21af00f2.png)
 
-
 ## Microservices
 
 - Microservices architecture is an approach in which a single application is composed of many loosely coupled and independently deployable smaller services.
@@ -16,7 +15,6 @@
 - With monolithic architectures, all processes are tightly coupled and run as a single service. This means that if one process of the application experiences a spike in demand, the entire architecture must be scaled.
 
 - With a microservices architecture, an application is built as independent components that run each application process as a service. Because they are independently run, each service can be updated, deployed, and scaled to meet demand for specific functions of an application.
-
 
 ![image](https://user-images.githubusercontent.com/106158041/203054387-c2c175a5-589b-490a-bef1-6e31d7b8d25f.png)
 
@@ -49,10 +47,13 @@
 - `docker pull [username:repo]`
 
 ### Docker Automation
+
 #### HTML task
+
 - inside the same folder as index.html, create a Dockerfile
 - `nano Dockerfile`
 - Inside the Dockerfile write this
+
 ```
 FROM nginx
 
@@ -72,18 +73,19 @@ EXPOSE 80
 # launch the server
 CMD ["nginx", "-g", "daemon off;"]
 ```
+
 - This will replace the HTML file inside nginx with your own
-- `docker build -t moeshaa123/130-nginx .` 
+- `docker build -t moeshaa123/130-nginx .`
 - `docker run -d -p 80:80 moeshaa123/130-nginx`
 
 ![html](https://user-images.githubusercontent.com/106158041/203329542-23b7c17e-d96e-428a-91c4-874d78b4068c.png)
-
 
 #### App task
 
 - In the Dockerfile expose Port 3000
 - Install Npm
 - Create a New Dockerfile where your app folder is
+
 ```
 FROM nginx
 
@@ -100,9 +102,10 @@ WORKDIR /home/app
 RUN npm install
 CMD ["npm", "start"]
 ```
+
 - `docker build -t moeshaa123/130-node .`
 - `docker run -d -p 3000:3000 moeshaa123/130-node`
 
 ![appimg](https://user-images.githubusercontent.com/106158041/203330532-fe5b4d92-a57a-4314-b57c-bc24207c0f0f.PNG)
 
-
+## Kubernetes
